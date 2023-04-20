@@ -4,7 +4,16 @@
    box-sizing: border-box;
    font-family: 'Montserrat', sans-serif;
 }
+body {
+   overflow: auto;
+   -ms-overflow-style: none;
+   scrollbar-width: none;
+}
 
+body::-webkit-scrollbar {
+   width: 0;
+   height: 0;
+}
 .container {
    max-width: 1171px;
    margin: auto;
