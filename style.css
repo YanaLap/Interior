@@ -5,6 +5,17 @@
    font-family: 'Montserrat', sans-serif;
 }
 
+body {
+   overflow: auto;
+   -ms-overflow-style: none;
+   scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+   width: 0;
+   height: 0;
+}
+
 .container {
    max-width: 1171px;
    margin: auto;
@@ -81,7 +92,7 @@
 }
 
 .fishnet-chair-trending {
-   margin-top: 280px;
+   padding-top: 280px;
    color: #43a047;
 }
 
@@ -224,6 +235,7 @@
    padding-bottom: 63px;
    border: 1px solid #9c9c9c;
    display: none;
+   cursor: pointer;
 }
 
 .featured__gallery__card:hover .featured__gallery__description {
@@ -291,7 +303,10 @@
 .chair_red {
    width: 50%;
    background-image: url(./img/slider__chair_\ red.png);
+   background-color: #e8e9eb;
    padding-bottom: 267px;
+  background-position-x: right;
+  background-repeat: no-repeat;
 }
 
 .chair__container {
@@ -408,6 +423,7 @@
 
 .fishnet-chair_brown {
    background-image: url(./img/slider__table-brown.png);
+   background-color: #cfd5e7;
 }
 
 .fishnet-chair_brown__controllers {
