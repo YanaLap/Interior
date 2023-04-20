@@ -69,7 +69,7 @@
 }
 
 .header {
-   background-image: url(/img/slider__chairs.png);
+   background-image: url(./img/slider__chairs.png);
    max-width: 100%;
    height: auto;
 }
@@ -290,7 +290,7 @@
 
 .chair_red {
    width: 50%;
-   background-image: url(/img/slider__chair_\ red.png);
+   background-image: url(./img/slider__chair_\ red.png);
    padding-bottom: 267px;
 }
 
@@ -300,7 +300,7 @@
 
 .chair_brown {
    width: 50%;
-   background-image: url(/img/slider__chair_\ brown.png);
+   background-image: url(./img/slider__chair_\ brown.png);
 }
 
 .chair__exclusive {
@@ -407,7 +407,7 @@
 }
 
 .fishnet-chair_brown {
-   background-image: url(/img/slider__table-brown.png);
+   background-image: url(./img/slider__table-brown.png);
 }
 
 .fishnet-chair_brown__controllers {
@@ -431,7 +431,7 @@
 }
 
 .chair__furniture__pillow {
-   background-image: url(/img/slider__pillow.png);
+   background-image: url(./img/slider__pillow.png);
    padding-left: 31px;
    padding-bottom: 196px;
    background-repeat: no-repeat;
@@ -455,7 +455,7 @@
 }
 
 .find {
-   background-image: url(/img/slider_telefon.png);
+   background-image: url(./img/slider_telefon.png);
    padding-bottom: 120px;
 }
 
