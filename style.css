@@ -81,8 +81,11 @@ body::-webkit-scrollbar {
 
 .header {
    background-image: url(./img/slider__chairs.png);
+   background-color: #f0f0f0;
    max-width: 100%;
    height: auto;
+   background-position-x: right;
+   background-repeat: no-repeat;
 }
 
 .chair__category {
@@ -305,8 +308,8 @@ body::-webkit-scrollbar {
    background-image: url(./img/slider__chair_\ red.png);
    background-color: #e8e9eb;
    padding-bottom: 267px;
-  background-position-x: right;
-  background-repeat: no-repeat;
+   background-position-x: right;
+   background-repeat: no-repeat;
 }
 
 .chair__container {
@@ -316,6 +319,9 @@ body::-webkit-scrollbar {
 .chair_brown {
    width: 50%;
    background-image: url(./img/slider__chair_\ brown.png);
+   background-color: #f7f7f7;
+   background-position-x: right;
+   background-repeat: no-repeat;
 }
 
 .chair__exclusive {
