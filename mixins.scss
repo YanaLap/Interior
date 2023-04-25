@@ -1,0 +1,61 @@
+@mixin chairCategory($color: gray) {
+   color: $color;
+   font-size: 18px;
+   font-weight: 700;
+   text-transform: uppercase;
+}
+
+@mixin fishnetChair {
+   font-weight: 100;
+   color: $lightDark;
+   font-size: 62px;
+   text-transform: uppercase;
+  }
+
+  @mixin buttonOrder{
+   background-color: $backroundWhite;
+   border-radius: 23px;
+   text-decoration: none;
+   color: $lightDark;
+   font-size: 18px;
+   font-weight: 700;
+   text-transform: uppercase;
+   letter-spacing: 2.9px;
+   
+  }
+
+  @mixin chairSubtitle{
+  color: $gray;
+  font-size: 14px;
+  font-weight: 300;
+  }
+
+  @mixin exploreAll{
+   color: $lightDark;
+   font-size: 18px;
+   font-weight: 700;
+   letter-spacing: 2.5px;
+   text-transform: uppercase;
+   padding-top: 21px;
+  }
+
+  @mixin arrow{
+   border-top: 3px solid $dark;
+   border-right: 3px solid $dark;
+   width: 13px;
+   height: 13px;
+   transform: rotate(45deg);
+  }
+
+  @mixin thumbnail{
+      color: $lightDark;
+      font-size: 36px;
+      font-weight: 700;
+  }
+
+  @mixin controllers{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 11px;
+   }
