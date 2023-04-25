@@ -1,14 +1,4 @@
-$lightDark: #212121;
-$dark: #000;
-$darkGray: #8c8c8c;
-$backroundLightGray: #9c9c9c;
-$gray: #6c6c6c;
-$backroundDarkWhite: #f0f0f0;
-$backroundWhite: #ffffff;
-$green: #43a047;
-$backroundlightWhite: #e8e9eb;
-$blue: #1e88e5;
-$red: #e53935;
+@import "general";
 
 * {
    margin: 0;
@@ -28,21 +18,29 @@ body::-webkit-scrollbar {
    height: 0;
 }
 
+.header {
+   background-image: url(./img/slider__chairs.png);
+   background-color: $backroundDarkWhite;
+   max-width: 100%;
+   height: auto;
+   background-position-x: right;
+   background-repeat: no-repeat;
+
+   &__menu {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 63px;
+
+      &__logo:hover {
+         cursor: pointer;
+         opacity: 70%;
+      }
+   }
+}
+
 .container {
    max-width: 1171px;
    margin: auto;
-}
-
-.header__menu {
-
-   display: flex;
-   justify-content: space-between;
-   padding-top: 63px;
-}
-
-.menu__logo:hover {
-   cursor: pointer;
-   opacity: 70%;
 }
 
 .menu {
@@ -53,112 +51,105 @@ body::-webkit-scrollbar {
    max-width: 551px;
    margin-right: 67px;
 
-&__item {
-   font-weight: 300;
-   color: $darkGray;
-   letter-spacing: 1.4px;
-   text-decoration: none;
-   font-size: 14px;
-   padding: 0 15px 0 3px;
+   &__item {
+      font-weight: 300;
+      color: $darkGray;
+      letter-spacing: 1.4px;
+      text-decoration: none;
+      font-size: 14px;
+      padding: 0 15px 0 3px;
 
-&__link:active {
-   border: none;
+      &_active {
+         color: $lightDark;
+         font-weight: 700;
+         letter-spacing: 1.4px;
+         border-bottom: 3px solid $lightDark;
+         padding-right: 11px;
+         padding-left: 14px;
+      }
+
+      &:last-child {
+         padding: 0;
+
+         &:hover {
+            cursor: pointer;
+            border-bottom: none;
+            opacity: 70%;
+         }
+      }
+
+      &:active {
+         border-bottom: 3px solid $lightDark;
+         color: $lightDark;
+         font-weight: 700;
+      }
+
+      &__link {
+
+         &:hover {
+            cursor: pointer;
+            color: $lightDark;
+         }
+
+         &:active {
+            border: none;
+         }
+      }
+
+   }
 }
 
-&__link:hover {
-   cursor: pointer;
-   color: $lightDark;
-}
-
-}
-   &__item:active {
-      border-bottom: 3px solid $lightDark;
-      color: $lightDark;
-      font-weight: 700;
+.fishnet {
+   &__category {
+      padding-top: 280px;
+      letter-spacing: 1.8px;
+      @include chairCategory ($green);
    }
 
-&__item
+   &__title {
+      @include fishnetChair;
+      letter-spacing: -0.05em;
 
-&__item:last-child {
-   padding: 0;
-}
+      &__word {
+         letter-spacing: -4.9px;
+         padding-right: 12px;
+      }
+   }
 
-&__item_active {
-   color: $lightDark;
-   font-weight: 700;
-   letter-spacing: 1.4px;
-   border-bottom: 3px solid $lightDark;
-   padding-right: 11px;
-   padding-left: 14px;
-}
-}
-.header {
-   background-image: url(./img/slider__chairs.png);
-   background-color: $backroundDarkWhite;
-   max-width: 100%;
-   height: auto;
-   background-position-x: right;
-   background-repeat: no-repeat;
-}
 
-.chair__category {
-   font-size: 18px;
-   font-weight: 700;
-   letter-spacing: 1.8px;
-}
+   &__button {
+      @include buttonOrder;
+      padding: 12px 30px;
 
-.fishnet-chair-trending {
-   padding-top: 280px;
-   color: $green;
+      &:hover {
+         opacity: 80%;
+         cursor: pointer;
+      }
+
+      &:active {
+         border: 1px solid $gray;
+      }
+
+   }
+
+   &__controllers {
+      padding-top: 151px;
+      padding-bottom: 18px;
+      @include controllers;
+   }
 }
 
-.fishnet-chair__title {
-   font-weight: 100;
-   color: $lightDark;
-   font-size: 62px;
-   text-transform: uppercase;
-   letter-spacing: -0.05em;
-}
-
-.fishnet__title {
-   letter-spacing: -4.9px;
-   padding-right: 12px;
+.button__arrow {
+   padding-left: 11px;
 }
 
 .fishnet-chair__subtitle {
-   color: $gray;
-   font-size: 14px;
-   font-weight: 300;
+   @include chairSubtitle;
    line-height: 24px;
    margin-top: 13px;
    margin-bottom: 40px;
    max-width: 467px;
    letter-spacing: -0.1px;
-}
-
-.chair__button {
-   background-color: $backroundWhite;
-   border-radius: 23px;
-   text-decoration: none;
-   color: $lightDark;
-   font-size: 18px;
-   font-weight: 700;
-   text-transform: uppercase;
-   letter-spacing: 2.9px;
-   padding: 12px 32px;
-}
-
-.chair__button:hover {
-   opacity: 80%;
-   cursor: pointer;
-}
-
-.chair__button:active {
-   border: 1px solid $gray;
-}
-
-.chair__button__arrow {
-   padding-left: 11px;
 }
 
 .radio {
@@ -169,145 +160,129 @@ body::-webkit-scrollbar {
 
 .featured {
    padding-bottom: 116px;
-}
 
-.featured-navigator {
-   display: flex;
-   justify-content: space-between;
-   padding-top: 113px;
-}
+   &__navigator {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 113px;
 
-.featured__tabs__name {
-   border-bottom: 3px solid $lightDark;
-   padding-bottom: 10px;
-   padding-left: 5px;
-   padding-right: 20px;
-}
+      &__tabs {
+         display: flex;
+         justify-content: space-between;
+         @include thumbnail;
+         padding-left: 1px;
+         letter-spacing: -1px;
 
-.featured__tabs {
-   display: flex;
-   justify-content: space-between;
-   color: $lightDark;
-   font-size: 36px;
-   font-weight: 700;
-   padding-left: 1px;
-   letter-spacing: -1px;
-}
+         .tabs__name {
+            border-bottom: 3px solid $lightDark;
+            padding-bottom: 10px;
+            padding-left: 5px;
+            padding-right: 20px;
+         }
 
-.featured__gallery {
-   display: flex;
-   justify-content: space-between;
-   padding-top: 50px;
-   gap: 30px;
-}
+         .tabs__new {
+            padding-left: 8px;
+            padding-right: 23px;
+            color: $gray;
+            border-bottom: 1px solid $gray;
 
-.featured__gallery__card {
-   position: relative;
-}
+            &:hover {
+               cursor: pointer;
+               opacity: 80%;
+            }
 
-.featured__gallery__button {
-   border-radius: 50%;
-   background-color: $backroundWhite;
-   box-shadow: 0 2px 5px 1px rgba(33, 33, 33, 0.35);
-   width: 48px;
-   height: 48px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   padding-right: 6px;
-}
+            &:active {
+               border-bottom: 3px solid $lightDark;
+               color: $lightDark;
+               font-weight: 700;
+            }
+         }
+      }
 
-.featured__gallery__button:hover {
-   cursor: pointer;
-   opacity: 70%;
-}
+   }
 
-.featured__gallery__button:active {
-   background-color: $backroundLightGray;
-}
+   &__gallery {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 50px;
+      gap: 30px;
+   }
 
-.featured__gallery__button__arrow {
+   &__subtitle {
+      @include chairSubtitle;
+      text-align: center;
+      padding: 14px 32px 0 32px;
+      letter-spacing: -0.2px;
+      line-height: 21px;
+   }
 
-   border-top: 3px solid $dark;
-   border-right: 3px solid $dark;
-   width: 13px;
-   height: 13px;
-   transform: rotate(45deg)
-}
-
-.featured__gallery__photo {
-   cursor: pointer;
-}
-
-.featured__gallery__description {
-   position: absolute;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   top: 0;
-   padding-top: 62px;
-   background-color: rgba(255, 255, 255, 0.9);
-   padding-bottom: 63px;
-   border: 1px solid $backroundLightGray;
-   display: none;
-   cursor: pointer;
-}
-
-.featured__gallery__card:hover .featured__gallery__description {
-   display: flex;
-}
-
-.featured__title {
-   padding-top: 12px;
-   padding-right: 1px;
-   color: $lightDark;
-   font-size: 22px;
-   font-weight: 700;
-   letter-spacing: -0.5px;
-}
-
-.featured__subtitle {
-   text-align: center;
-   padding: 14px 32px 0 32px;
-   color: $gray;
-   font-size: 14px;
-   font-weight: 300;
-   letter-spacing: -0.2px;
-   line-height: 21px;
-}
-
-.featured-tabs-new {
-   padding-left: 8px;
-   padding-right: 23px;
-   color: $gray;
-   border-bottom: 1px solid $gray;
-}
-
-.featured-tabs-new:hover {
-   cursor: pointer;
-   opacity: 80%;
-}
-
-.featured-tabs-new:active {
-   border-bottom: 3px solid $lightDark;
-   color: $lightDark;
-   font-weight: 700;
+   &__title {
+      padding-top: 12px;
+      padding-right: 1px;
+      color: $lightDark;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+   }
 }
 
 .explore {
-   color: $lightDark;
-   font-size: 18px;
-   font-weight: 700;
-   letter-spacing: 2.5px;
-   text-transform: uppercase;
-   padding-top: 21px;
+   @include exploreAll;
 }
 
-.arrow__explore {
-   padding-left: 3px;
+.card {
+   position: relative;
+
+   &__button {
+      border-radius: 50%;
+      background-color: $backroundWhite;
+      box-shadow: 0 2px 5px 1px rgba(33, 33, 33, 0.35);
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-right: 6px;
+
+      &:active {
+         background-color: $backroundLightGray;
+      }
+
+      &:hover {
+         cursor: pointer;
+         opacity: 70%;
+      }
+   }
+
+   &__photo {
+      cursor: pointer;
+   }
+
+   &__description {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      top: 0;
+      padding-top: 62px;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding-bottom: 63px;
+      border: 1px solid $backroundLightGray;
+      display: none;
+      cursor: pointer;
+   }
+
+   &__button__arrow {
+      @include arrow;
+   }
 }
 
-.chair__info{
+.card:hover .card__description {
+   display: flex;
+}
+
+
+.chair__container {
    display: flex;
    justify-content: space-between;
    margin: 0;
@@ -315,17 +290,47 @@ body::-webkit-scrollbar {
    max-width: 100%;
 }
 
+.chair {
+   padding-left: 51px;
+
+   &__subtitle {
+      @include chairSubtitle;
+      line-height: 24.04px;
+      letter-spacing: -0.15px;
+      max-width: 403px;
+      padding: 9px 25px 40px 0;
+   }
+
+   &__title {
+      @include fishnetChair;
+      letter-spacing: -0.05em;
+   }
+
+   &__exclusive {
+      @include chairCategory ($blue);
+      padding-top: 224px;
+      letter-spacing: 1px;
+   }
+
+   &__name {
+      @include thumbnail;
+      padding-top: 6px;
+      letter-spacing: -1.3px;
+   }
+
+   &__button {
+      @include buttonOrder;
+      padding: 12px 30px 12px 32px;
+   }
+}
+
 .chair_red {
    width: 50%;
    background-image: url(./img/slider__chair_\ red.png);
-   background-color: $backroundlightWhite;
    padding-bottom: 267px;
+   background-color: $backroundlightWhite;
    background-position-x: right;
    background-repeat: no-repeat;
-}
-
-.chair__container{
-   padding-left: 51px;
 }
 
 .chair_brown {
@@ -336,55 +341,17 @@ body::-webkit-scrollbar {
    background-repeat: no-repeat;
 }
 
-.chair__exclusive {
-   padding-top: 224px;
-   color: $blue;
-   text-transform: uppercase;
-   letter-spacing: 1px;
-}
-
-.chair__name {
-   color: $lightDark;
-   font-size: 36px;
-   font-weight: 700;
-   padding-top: 6px;
-   letter-spacing: -1.3px;
-}
-
-.chair__subtitle {
-   color: $gray;
-   font-size: 14px;
-   font-weight: 300;
-   line-height: 24.04px;
-   padding-top: 9px;
-   padding-bottom: 40px;
-   letter-spacing: -0.15px;
-   max-width: 403px;
-   padding-right: 25px;
-}
-
-.chair__button {
-   padding-right: 30px;
-}
-
-.fishnet-chair__controllers {
-   padding-top: 151px;
-   padding-bottom: 18px;
-}
-
-.controllers {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   gap: 11px;
-}
-
 .label__radio {
    border-radius: 50%;
    width: 30px;
    height: 30px;
    background-color: $lightDark;
    opacity: 0.2;
+
+   &:hover {
+      cursor: pointer;
+      opacity: 0.4;
+   }
 }
 
 .radio:checked+.label__radio {
@@ -394,42 +361,36 @@ body::-webkit-scrollbar {
    opacity: 1;
 }
 
-.label__radio:hover {
-   cursor: pointer;
-   opacity: 0.4;
-}
-
-.trending-products__name {
-   display: flex;
-   justify-content: space-between;
-   padding-top: 113px;
-   margin-left: 98px;
-}
-
-.trending__container {
+.products {
    margin: 0;
    max-width: 100%;
    padding-right: 97px;
+
+   &__name {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 113px;
+      margin-left: 98px;
+   }
 }
 
-.trending-products__title {
-   color: $lightDark;
-   font-size: 36px;
-   font-weight: 700;
+.products__title {
+   @include thumbnail;
    letter-spacing: -1.2px;
 }
 
-.trending-products__explore {
+.explore {
+   @include exploreAll;
    letter-spacing: 2.8px;
    padding-top: 20px;
+
+   &:hover {
+      cursor: pointer;
+      opacity: 80%;
+   }
 }
 
-.explore:hover {
-   cursor: pointer;
-   opacity: 80%;
-}
-
-.container__gallery-products {
+.gallery-products {
    display: flex;
    justify-content: space-between;
    flex-wrap: wrap;
@@ -439,19 +400,23 @@ body::-webkit-scrollbar {
    padding-bottom: 119px;
 }
 
-.fishnet-chair_brown {
+.chair__table {
    background-image: url(./img/slider__table-brown.png);
    background-color: #cfd5e7;
+
+   .chair__button {
+      padding-right: 30px;
+   }
+
 }
 
-.fishnet-chair_brown__controllers {
+.table__controllers {
    padding-top: 238px;
    padding-bottom: 20px;
 }
 
 .chair__hot {
-   color: $red;
-   text-transform: uppercase;
+   @include chairCategory ($red);
    padding-top: 283px;
    letter-spacing: 1.3px;
 }
@@ -464,28 +429,40 @@ body::-webkit-scrollbar {
    margin-bottom: 120px;
 }
 
-.furniture__pillow {
-  background-image: url(./img/slider__pillow.png);
-   padding-left: 31px;
-   padding-bottom: 196px;
-   background-repeat: no-repeat;
-   width: 100%;
-}
+.furniture {
+   &__pillow {
+      background-image: url(./img/slider__pillow.png);
+      padding-left: 31px;
+      padding-bottom: 196px;
+      background-repeat: no-repeat;
+      width: 100%;
+   }
 
-.furniture__exclusive {
-   padding-top: 181px;
-}
+   &__subtitle {
+      min-width: 404px;
+      padding-right: 35px;
 
-.furniture__subtitle {
-   min-width: 404px;
-   padding-right: 35px;
-}
+   }
 
-.furniture__gallery {
-   display: flex;
-   justify-content: space-between;
-   flex-wrap: wrap;
-   gap: 29px;
+   &__gallery {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 29px;
+   }
+
+   &__name {
+      @include thumbnail;
+      padding-top: 6px;
+      letter-spacing: -1.3px;
+
+   }
+
+   &__exclusive {
+      @include chairCategory ($blue);
+      padding-top: 181px;
+      letter-spacing: 1.3px;
+   }
 }
 
 .find {
@@ -494,11 +471,8 @@ body::-webkit-scrollbar {
 }
 
 .find__mobile-app {
-   text-transform: uppercase;
+   @include chairCategory;
    padding-top: 121px;
-   color: $gray;
-   font-size: 18px;
-   font-weight: 700;
    letter-spacing: 1.3px;
 }
 
@@ -509,6 +483,7 @@ body::-webkit-scrollbar {
 }
 
 .find__title-follow {
+   @include fishnetChair;
    max-width: 434px;
    padding: 0;
    letter-spacing: -6.5px;
@@ -543,40 +518,48 @@ body::-webkit-scrollbar {
 .footer {
    background-color: #f7f7f7;
    padding-bottom: 30px;
+
+   &__container {
+      display: flex;
+      justify-content: space-between;
+      gap: 41px;
+   }
+
+   &__name {
+      color: $gray;
+      font-size: 18px;
+      font-weight: 700;
+      padding-bottom: 12px;
+      padding-top: 111px;
+      text-transform: uppercase;
+      padding-bottom: 14px;
+      letter-spacing: 1.3px;
+   }
+
+   &__info {
+      color: $lightDark;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 22px;
+      letter-spacing: -0.15px;
+
+      &_bold {
+         font-size: 14px;
+         font-weight: 700;
+         letter-spacing: 0.7px;
+         text-transform: uppercase;
+         padding-bottom: 10px
+      }
+
+      &:hover,
+      &_bold:hover {
+         cursor: pointer;
+         color: #a9a5a5;
+      }
+   }
 }
 
-.footer-container {
-   display: flex;
-   justify-content: space-between;
-   gap: 41px;
-}
-
-.footer__name {
-   color: $gray;
-   font-size: 18px;
-   font-weight: 700;
-   padding-bottom: 12px;
-   padding-top: 111px;
-   text-transform: uppercase;
-   padding-bottom: 14px;
-   letter-spacing: 1.3px;
-}
-
-.footer__info {
-   color: $lightDark;
-   font-size: 14px;
-   font-weight: 300;
-   line-height: 22px;
-   letter-spacing: -0.15px;
-}
-
-.footer__info:hover,
-.footer__info_bold:hover {
-   cursor: pointer;
-   color: #a9a5a5;
-}
-
-.lets-stay__subtitle:hover {
+.footer__info .lets-stay__subtitle:hover {
    cursor: auto;
    color: $lightDark;
 }
@@ -592,35 +575,29 @@ body::-webkit-scrollbar {
 .useful-information {
    min-width: 431px;
    margin-right: 31px;
+
+   &__title {
+      letter-spacing: 1.65px;
+      padding-bottom: 16px;
+   }
+
+   &__container {
+      display: flex;
+      justify-content: space-between;
+      gap: 96px;
+      min-width: 425px;
+   }
+
+   &__block-two {
+      margin-right: 3px;
+   }
 }
 
-.useful-information__title {
-   letter-spacing: 1.65px;
-   padding-bottom: 16px;
-}
-
-.useful-information__container {
-   display: flex;
-   justify-content: space-between;
-   gap: 96px;
-   min-width: 425px;
-}
-
-.useful-information__block-two {
-   margin-right: 3px;
-}
 
 .architect-accounts__word {
    letter-spacing: 0px;
 }
 
-.footer__info_bold {
-   font-size: 14px;
-   font-weight: 700;
-   letter-spacing: 0.7px;
-   text-transform: uppercase;
-   padding-bottom: 10px
-}
 
 .lets-stay__subtitle {
    max-width: 412px;
@@ -646,11 +623,11 @@ body::-webkit-scrollbar {
    letter-spacing: -0.25px;
    border: none;
    outline: none;
-}
 
-.footer-email:focus {
-   background-color: #e7e5e5;
-   color: $lightDark;
+   &:focus {
+      background-color: #e7e5e5;
+      color: $lightDark;
+   }
 }
 
 .footer-email__button {
@@ -665,11 +642,11 @@ body::-webkit-scrollbar {
 
 .footer-email__send {
    width: 21px;
-}
 
-.footer-email__send:hover {
-   cursor: pointer;
-   opacity: 80%;
+   &:hover {
+      cursor: pointer;
+      opacity: 80%;
+   }
 }
 
 .terms {
@@ -683,21 +660,21 @@ body::-webkit-scrollbar {
    text-transform: uppercase;
    letter-spacing: 0.35px;
    padding-top: 2px;
-}
 
-.policies__text__condition {
-   letter-spacing: 0.5px;
-   padding-right: 1px;
+   &__condition {
+      letter-spacing: 0.5px;
+      padding-right: 1px;
+   }
 }
 
 .icon {
    width: 28px;
    margin-left: 1px;
-}
 
-.icon:hover {
-   cursor: pointer;
-   opacity: 80%;
+   &:hover {
+      cursor: pointer;
+      opacity: 80%;
+   }
 }
 
 .additional__information {
