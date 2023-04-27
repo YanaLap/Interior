@@ -405,7 +405,6 @@ body::-webkit-scrollbar {
   flex-wrap: wrap;
   gap: 30px;
   padding-top: 61px;
-  padding-left: 97px;
   padding-bottom: 119px;
 }
 
@@ -733,11 +732,11 @@ body::-webkit-scrollbar {
   .gallery-products {
     justify-content: start;
   }
+  .gallery-products {
+    padding-left: 0px;
+    justify-content: center;
+  }
 }
-.gallery-products {
-  padding-left: 0px;
-}
-
 @media (max-width: 991.98px) {
   .furniture__gallery {
     flex-wrap: wrap;
@@ -800,19 +799,16 @@ body::-webkit-scrollbar {
   .header__menu {
     padding-top: 40px;
   }
+  .gallery-products {
+    justify-content: center;
+  }
+  .products__title {
+    font-size: 26px;
+  }
+  .explore {
+    font-size: 14px;
+  }
 }
-.gallery-products {
-  justify-content: center;
-}
-
-.products__title {
-  font-size: 26px;
-}
-
-.explore {
-  font-size: 14px;
-}
-
 @media (max-width: 649.98px) {
   .featured__gallery {
     justify-content: center;
