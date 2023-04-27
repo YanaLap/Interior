@@ -999,7 +999,9 @@ body::-webkit-scrollbar {
       background-size: contain;
 
       &__subtitle {
-         max-width: 80%;
+         max-width: min-content;
+         min-width: 60%;
+         padding-right: 0;
       }
    }
 
@@ -1044,10 +1046,6 @@ body::-webkit-scrollbar {
       padding-bottom: 100px;
    }
 
-   .chair__subtitle {
-      max-width: 93%;
-   }
-
    .chair__exclusive {
       padding-top: 100px;
    }
@@ -1067,10 +1065,6 @@ body::-webkit-scrollbar {
       padding-top: 20px;
    }
 
-   .furniture__subtitle {
-      min-width: 100%;
-   }
-
    .additional__information {
       margin-top: 20px;
    }
@@ -1080,6 +1074,9 @@ body::-webkit-scrollbar {
    }
 
    .featured__navigator {
+      display: block;
+   }
+   .products__name{
       display: block;
    }
 }
@@ -1155,11 +1152,6 @@ body::-webkit-scrollbar {
       text-align: center;
       padding-bottom: 20px;
       padding-top: 50px;
-   }
-
-   .chair__subtitle {
-      max-width: min-content;
-      min-width: 80%;
    }
 
    .furniture__name {
