@@ -752,11 +752,19 @@ body::-webkit-scrollbar {
 }
 }
 @media (max-width: 991.98px) {
+   .fishnet__category {
+      padding-top: 150px;
+   }
    .furniture__gallery {
       flex-wrap: wrap;
       gap: 20px;
    }
-
+   .chair__hot{
+      padding-top: 135px;
+   }
+   .table__controllers{
+      padding-top: 135px;
+   }
    .product__photo {
       width: 253px;
    }
@@ -777,12 +785,12 @@ body::-webkit-scrollbar {
    }
 
    .furniture__pillow {
-      // padding-bottom: 60px;
+      padding-bottom: 145px;
       background-size: contain;
    }
 
    .furniture__exclusive {
-      padding-top: 60px;
+      padding-top: 145px;
    }
 
    .find__mobile-app {
@@ -827,6 +835,7 @@ body::-webkit-scrollbar {
    .menu {
       display: none;
    }
+ 
 }
 
 @media (max-width: 714.98px) {
@@ -888,13 +897,9 @@ display: block;
          color:#212121;
      }
    }
-   .chair__exclusive {
-      // padding-top: 60px;
-   }
-
+  
    .chair {
-      // padding-bottom: 60px;
-      background-size: contain;
+        background-size: contain;
 
       &__subtitle {
          max-width: 80%;
@@ -928,13 +933,15 @@ display: block;
    .contact-us {
       width: 100%;
    }
-
+   .footer__container{
+      justify-content: start;
+   }
+  
 }
 
 @media (max-width: 479.98px) {
    .chair {
-      background-position-x: left;
-      padding-bottom: 100px;
+           padding-bottom: 100px;
    }
 
    .chair__subtitle {
@@ -1050,10 +1057,18 @@ font-size: 40px;
    .furniture__container{
       padding: 0;
    }
+   .furniture__pillow{
+      padding-bottom: 120px;
+   }
    .find__subtitle{
       font-size: 14px;
    }
    .img__google-play {
       margin-left: 0px;
   }
+}
+@media (max-width: 364.98px){
+   .chair{
+      background-position-x: left;
+   }
 }
