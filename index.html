@@ -14,16 +14,23 @@
 <body>
 
    <header class="header">
+      <input id="click" type="checkbox" class="menu__checkbox">
       <div class="container">
          <nav class="header__menu">
             <div class="header__menu__logo">
                <a href="./index.html"> <img src="./img/logo.svg" alt="logo"></a>
             </div>
-            <div class="hamburger">
-               <div class="hamburger__line"></div>
-               <div class="hamburger__line"></div>
-               <div class="hamburger__line"></div>
-            </div>
+
+            <label class="hamburger " for="click">
+               <span class="hamburger__line"></span>
+               <span class="hamburger__line"></span>
+               <span class="hamburger__line"></span>
+               <span class="menu__checkbox__closed">
+                  <span class="hamburger__line__closed"></span>
+                  <span class="hamburger__line__closed"></span>
+               </span>
+            </label>
+
             <ul class="menu">
                <li class="menu__item menu__item_active">
                   HOME

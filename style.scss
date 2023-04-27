@@ -42,9 +42,15 @@ body::-webkit-scrollbar {
    max-width: 1171px;
    margin: auto;
 }
-.hamburger{
+
+.hamburger {
    display: block;
 }
+
+.menu__checkbox {
+   display: none;
+}
+
 .menu {
    list-style-type: none;
    display: flex;
@@ -707,8 +713,6 @@ body::-webkit-scrollbar {
       max-width: 65%;
       padding-right: 37px;
    }
-
-
 }
 
 
@@ -748,38 +752,45 @@ body::-webkit-scrollbar {
       justify-content: start;
    }
 
-.gallery-products {
-   padding-left: 0px;
-   justify-content: center;
+   .gallery-products {
+      padding-left: 0px;
+      justify-content: center;
+   }
 }
-}
+
 @media (max-width: 991.98px) {
    .fishnet__category {
       padding-top: 150px;
    }
+
    .furniture__gallery {
       flex-wrap: wrap;
       gap: 20px;
    }
-   .chair__hot{
+
+   .chair__hot {
       padding-top: 135px;
    }
-   .table__controllers{
+
+   .table__controllers {
       padding-top: 135px;
    }
+
    .product__photo {
       width: 253px;
    }
 
-   .chair__exclusive{
+   .chair__exclusive {
       padding-top: 120px;
    }
-.chair{
-   padding-bottom: 140px;
-   background-position-x: right;
-   width: 100%;
-   background-size: contain;
-}
+
+   .chair {
+      padding-bottom: 140px;
+      background-position-x: right;
+      width: 100%;
+      background-size: contain;
+   }
+
    .furniture__container {
       flex-direction: column;
       margin-top: 60px;
@@ -806,7 +817,7 @@ body::-webkit-scrollbar {
 
    .furniture__pillow {
       background-position-x: right;
-      background-color: #e9e9e9;
+      background-color: $backroundlightWhite;
    }
 
    .footer__container {
@@ -819,62 +830,128 @@ body::-webkit-scrollbar {
       padding-top: 5px;
    }
 
-
-
    .chair__container {
       flex-direction: column;
    }
 
-
    .menu {
       margin: 0;
    }
-
-
 }
 
 @media (max-width: 830.98px) {
    .menu {
       display: none;
    }
- .hamburger{
-   display: block;
- }
- .hamburger {
-   width: 30px;
-   height: 22px;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
-   align-items: center;
-   z-index: 1;
-}
-.hamburger__line {
-   background: #212121;
-   width: 100%;
-   height: 2.25px;
-}
+
+   .hamburger {
+      display: block;
+      width: 30px;
+      height: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1;
+      &:hover{
+         cursor: pointer;
+         opacity: 80%;
+      }
+   }
+
+   .hamburger__line {
+      background: $lightDark;
+      width: 100%;
+      height: 2.25px;
+   }
+
+   .menu__checkbox:checked+.container .menu {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      right: 0;
+      top: 0;
+      max-width: 350px;
+      width: 100%;
+      padding-top: 65px;
+      padding-bottom: 40px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+   }
+
+   .menu__checkbox:checked .hamburger {
+      display: none;
+   }
+
+   .menu__checkbox {
+      display: none;
+   }
+
+   .menu__item_active {
+      border-bottom: none;
+      padding: 0;
+   }
+   .menu__item:hover{
+      opacity: 50%;
+   }
+   .menu__item_active:hover{
+      opacity: 100%;
+      cursor: auto;
+   }
+   .menu__item:active {
+      border-bottom: none;
+   }
+
+   .hamburger__line__closed {
+      background: $lightDark;
+      width: 100%;
+      height: 2.25px;
+   }
+
+   .hamburger__line__closed:first-of-type {
+      transform: rotate(45deg);
+      position: absolute;
+   }
+
+   .hamburger__line__closed:last-of-type {
+      transform: rotate(-45deg);
+      position: absolute;
+   }
+
+   .menu__checkbox__closed {
+      display: none;
+      width: 30px;
+      height: 22px;
+      position: relative;
+   }
+
+   .menu__checkbox:checked+.container .hamburger__line {
+      display: none;
+   }
+
+   .menu__checkbox:checked+.container .menu__checkbox__closed {
+      display: block;
+   }
 }
 
 @media (max-width: 714.98px) {
    .header__menu {
       padding-top: 40px;
    }
+
    .gallery-products {
       justify-content: center;
    }
-   
-   
+
    .products__title {
       font-size: 26px;
    }
-   
+
    .explore {
       font-size: 14px;
    }
 }
-
-
 
 @media (max-width: 649.98px) {
    .featured__gallery {
@@ -884,12 +961,15 @@ body::-webkit-scrollbar {
    .furniture__gallery {
       justify-content: center;
    }
-  .featured__navigator{
-display: block;
+
+   .featured__navigator {
+      display: block;
    }
-   .featured__navigator__tabs{
+
+   .featured__navigator__tabs {
       justify-content: start;
    }
+
    .gallery-products {
       padding-bottom: 80px;
    }
@@ -897,40 +977,42 @@ display: block;
    .fishnet__title,
    .find__title-follow {
       font-size: 50px;
-
    }
 
    .fishnet {
-     &-chair__subtitle {
+      &-chair__subtitle {
          color: #ffffff;
       }
 
       &__title {
-
          color: #ffffff;
       }
    }
-   .find__title-follow{
+
+   .find__title-follow {
       .fishnet__title {
-         color:#212121;
-     }
+         color: $lightDark;
+      }
    }
-  
+
    .chair {
-        background-size: contain;
+      background-size: contain;
 
       &__subtitle {
          max-width: 80%;
       }
    }
-.chair__table{
-   .fishnet__title{
-      color: #212121;
+
+   .chair__table {
+      .fishnet__title {
+         color: $lightDark;
+      }
+
+      .fishnet-chair__subtitle {
+         color: $lightDark;
+      }
    }
-   .fishnet-chair__subtitle{
-      color: #212121;
-   }
-}
+
    .products__name,
    .gallery-products {
       padding-top: 40px;
@@ -951,15 +1033,15 @@ display: block;
    .contact-us {
       width: 100%;
    }
-   .footer__container{
+
+   .footer__container {
       justify-content: start;
    }
-  
 }
 
 @media (max-width: 479.98px) {
    .chair {
-           padding-bottom: 100px;
+      padding-bottom: 100px;
    }
 
    .chair__subtitle {
@@ -979,7 +1061,6 @@ display: block;
       min-width: 100%;
       margin-right: 0;
    }
-
 
    .additional__information {
       flex-direction: column;
@@ -1008,85 +1089,102 @@ display: block;
       padding-top: 72px;
       text-align: center;
    }
- 
 
-   .fishnet{
+   .fishnet {
       &__title {
          color: #f39090;
          font-size: 40px;
-   text-align: center;
+         text-align: center;
       }
-  &-chair__subtitle{
-      margin-top: 43px;
-    
+
+      &-chair__subtitle {
+         margin-top: 43px;
+      }
+
+
+      &__controllers {
+         padding-top: 80px;
+      }
    }
- 
- 
-&__controllers{
-   padding-top: 80px;
-}
-   }
-   .featured__navigator{
+
+   .featured__navigator {
       padding-top: 60px;
-      &__tabs{
+
+      &__tabs {
          font-size: 26px;
          justify-content: start;
       }
    }
+
    .fishnet__button,
-   .chair__button{
+   .chair__button {
       font-size: 12px;
    }
-   .chair{
+
+   .chair {
       padding-bottom: 65px;
-      &__name{
+
+      &__name {
          font-size: 26px;
       }
    }
-   .products__name{
+
+   .products__name {
       display: block;
    }
-   .find__title-follow{
-font-size: 40px;
-.fishnet__title{
-   color: #212121;
-}
-   }
-   .chair__table{
-      .fishnet__title{
-         color: #212121;
+
+   .find__title-follow {
+      font-size: 40px;
+
+      .fishnet__title {
+         color: $lightDark;
       }
+   }
+
+   .chair__table {
+      .fishnet__title {
+         color: $lightDark;
+      }
+
       .fishnet-chair__subtitle {
-         color: #212121;
+         color: $lightDark;
       }
    }
-   .chair__hot{
+
+   .chair__hot {
       text-align: center;
       padding-bottom: 20px;
       padding-top: 50px;
    }
-   .chair__subtitle{
-      max-width:min-content;
+
+   .chair__subtitle {
+      max-width: min-content;
       min-width: 80%;
    }
+
    .furniture__name {
       font-size: 26px;
    }
-   .furniture__container{
+
+   .furniture__container {
       padding: 0;
    }
-   .furniture__pillow{
+
+   .furniture__pillow {
       padding-bottom: 120px;
    }
-   .find__subtitle{
+
+   .find__subtitle {
       font-size: 14px;
    }
+
    .img__google-play {
       margin-left: 0px;
-  }
+   }
 }
-@media (max-width: 364.98px){
-   .chair{
+
+@media (max-width: 364.98px) {
+   .chair {
       background-position-x: left;
    }
 }
